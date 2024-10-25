@@ -1,46 +1,68 @@
-var paciente = document.querySelector("#primeiro-paciente");
+var tabela = document.querySelector("#tabela-pacientes");
+  
+  tabela.appendChild(pacienteTr);
+  
+  titulo.addEventListener('click', mostrarMensagem);
 
-titulo.addEventListener("click", mostraMensagem);
-
-function mostraMensagem(){
-  console.log("O titulo foi clicado");
+function mostrarMensagem (){
+  /*console.log("O título foi clicado");*/
 }
 
-var botaoAdicionar = document.querySelector("#add-paciente");
-botaoAdicionar.addEventListener("click", function(event){
+var botaoAdicionar = document.querySelector('#adicionar-paciente');
+botaoAdicionar.addEventListener('click', function(event) {
   event.preventDefault();
   
-  var form = document.querySelector("#form-add");
+  var form = document.querySelector('#form-adiciona');
   
-  var nome = form.nome.value;
-  var peso = form.peso.value;
-  var altura = form.altura.value;
-  var gordura = form.gordura.value;
+  //extraindo os dados digitados no formulario
+var paciente = obtemPacienteDoFormulario(form);
+  console.log(paciente);
+ /*console.log(form.nome.value);
+  console.log(form.peso.value);
+  console.log(form.altura.value);
+  console.log(form.gordura.value*/
   
-  var pacienteTr = document.createElement("tr");
+  /*criando a linha e as celulas da tabela do novo paciete*/
   
-  var nomeTd = document.createElement("td");
-  var pesoTd = document.createElement("td");
-  var alturaTd = document.createElement("td");
-  var gorduraTd = document.createElement("td");
-  var imcTd = document.createElement("td");
+  var pacienteTr = document.createElement('tr');
+  /*console.log(pacienteTr);*/
   
-  nomeTd.textContent = nome;
-  pesoTd.textContent = peso;
-  alturaTd.textContent = altura;
-  gorduraTd.textContent = gordura;
-  imcTd.textContent = imc;
+  var nomeTd = document.createElement('td');
+  var pesoTd = document.createElement('td');
+  var alturaTd = document.createElement('td');
+  var gorduraTd = document.createElement('td');
+  var imcTd = document.createElement('td');
   
+  
+  nomeTd.textContent = nomeAdicionar;
+  pesoTd.textContent = pesoAdicionar;
+  alturaTd.textContent = alturaAdicionar;
+  gorduraTd.textContent = gorduraAdicionar;
+  imcTd.textContent = calculaImc(peso, altura);
   pacienteTr.appendChild(nomeTd);
   pacienteTr.appendChild(pesoTd);
   pacienteTr.appendChild(alturaTd);
   pacienteTr.appendChild(gorduraTd);
   pacienteTr.appendChild(imcTd);
   
-  var tabela = document.querySelector("#tabela-pacientes");
+  /*aq add a linha com todos os seus dados na tabela do html*/
+  
+  var tabela = document.querySelector('#tabela-pacientes');
   
   tabela.appendChild(pacienteTr);
-  
-  
 });
 
+function obtemPacienteDoFormulario(form){
+    
+   var paciente = {
+     nome: form.nome.value, 
+     peso: form.peso.value,
+     altuta: form.altura.value,
+     gordura: form.gordura.value,
+     imc: calculaImc(form.peso.value, form.altura.value)
+   }
+   
+   return paciente; 
+}
+
+});
