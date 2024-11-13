@@ -7,7 +7,7 @@ function mostrarMensagem (){
 }
 
 var botaoAdicionar = document.querySelector('#adicionar-paciente');
-botaoAdicionar.addEventListener('click', function(event) {
+botaoAdicionar.addEventListener('click', function() {
   event.preventDefault();
   
       var form = document.querySelector("#form-adiciona");
