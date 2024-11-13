@@ -94,7 +94,18 @@
             <input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
         </div>
 
-        <button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+        <button id="botao">clique-me</button>
+<script>
+
+    var botao = document.querySelector('#botao');
+
+    function botaoHandler() {
+
+        alert('Botão clicado');
+    }
+
+    botao.addEventListener('click', botaoHandler());
+</script>
      
     </form>
 </section>
