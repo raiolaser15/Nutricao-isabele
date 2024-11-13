@@ -1,11 +1,6 @@
 var paciente = document.querySelector("#primeiro-paciente");
 var titulo = ;
 
-titulo.addEventListener('click', mostrarMensagem);
-function mostrarMensagem (){
-  console.log("O título foi clicado");
-}
-
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function(event) {
     event.preventDefault();
