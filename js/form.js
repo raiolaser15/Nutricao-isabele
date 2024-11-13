@@ -1,4 +1,5 @@
 var paciente = document.querySelector("#primeiro-paciente");
+var titulo = ;
 
 titulo.addEventListener('click', mostrarMensagem);
 function mostrarMensagem (){
